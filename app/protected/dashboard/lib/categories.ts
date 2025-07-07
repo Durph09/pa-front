@@ -25,12 +25,12 @@ export async function getCategories(userId: string): Promise<Category[]> {
     
 
     if (!response.ok) {
-      if (response.status === 404) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Categories not found');
+    
+       // throw new Error(response.statusText || 'Categories not found');
+       return []
       }
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+      
+    
 
     const data = await response.json();
   
