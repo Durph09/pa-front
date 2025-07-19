@@ -5,7 +5,12 @@ export interface Category {
     created_at: string
     user_id: string
   }
-  
+  export enum ProjectStatus {
+   open = "open",
+   closed = "closed",
+   on_hold = "on_hold",
+   in_progress = "in_progress"
+  }
  export  interface Project {
     id: string
     name: string

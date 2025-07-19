@@ -1,13 +1,9 @@
-import { Category, Task } from "@/lib/types";
+import { Task } from "@/lib/types";
 
 const API_BASE_URL = process.env.API_URL;
 
 
-/**
- * Fetch all categories for a user from the API
- * Based on /category/get-all-categories endpoint
- */
-export async function getTasks(userId: string, project_id=null, id=null): Promise<Category[]> {
+export async function getTasks(userId: string, project_id=null, id=null): Promise<Task[]> {
 const body:any ={}
     if(project_id){
         body.project_id = project_id

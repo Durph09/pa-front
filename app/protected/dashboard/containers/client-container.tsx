@@ -4,8 +4,8 @@ import type React from "react"
 import { useState } from "react"
 import { FolderOpen, FileText, CheckSquare } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { SideBarNav } from "@/components/_components/side-bar-nav"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+
+import { SidebarInset,SidebarTrigger } from "@/components/ui/sidebar"
 import { QuickAddTask } from "@/components/quick-add-task"
 import { Category, Project, Task } from "@/lib/types"
 
@@ -82,11 +82,11 @@ export function ClientContainer({ categoriesProp, projectsProp, tasksProp }: { c
           }
         
           return (
-            <SidebarProvider>
-              <SideBarNav />
-              <SidebarInset>
+            <div>
+              
+              
                 <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-                  <SidebarTrigger className="-ml-1" />
+                 
                   <div className="flex items-center justify-between w-full">
                     <h1 className="text-lg font-semibold">Project Management Dashboard</h1>
                     <div className="flex items-center gap-2">
@@ -139,8 +139,8 @@ export function ClientContainer({ categoriesProp, projectsProp, tasksProp }: { c
                     <UnassignedTasks tasks={tasks} projects={projects} handleSaveTask={handleSaveTask} handleDeleteTask={handleDeleteTask} getStatusBadge={getStatusBadge} getPriorityBadge={getPriorityBadge} />
                   )}
                 </div>
-              </SidebarInset>
-            </SidebarProvider>
+              
+           </div>
           )
         }
         

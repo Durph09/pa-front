@@ -5,6 +5,7 @@ import { getUser } from "@/lib/get-user"
 import { Category } from "@/lib/types"
 import { getProjects } from "./lib/projects"
 import { getTasks } from "./lib/tasks"
+import { StatsOverview } from "./_components/stats-overview"
 
 export default async function Page() {
   const user = await getUser();
@@ -22,9 +23,11 @@ export default async function Page() {
  
 
     return (
-      
+      <div className="space-y-6">
+        <StatsOverview categories={categories} projects={projects} tasks={tasks} />
         <ClientContainer categoriesProp={categories} projectsProp={projects} tasksProp={tasks} />
-    
+     
+    </div>
     )
 }
 
